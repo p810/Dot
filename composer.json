@@ -1,0 +1,17 @@
+{
+    "name": "p810/dot",
+    "description": "A utility for traversing arrays using dot notation.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Payton",
+            "email": "hellopayton@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "p810\\Dot\\": "src/"
+        }
+    },
+    "require": {}
+}
