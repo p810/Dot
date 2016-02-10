@@ -12,6 +12,7 @@ class Parser
      * @see <http://php.net/manual/en/class.arrayaccess.php>
      * @throws InvalidArgumentException if the value passed in $haystack is an object that does not implement ArrayAccess.
      * @throws InvalidArgumentException if the value passed in $needle doesn't use dot notation.
+     * @throws OutOfBoundsException if $needle points to an index that doesn't exist.
      * @return mixed
      */
     public static function find($needle, $haystack)
