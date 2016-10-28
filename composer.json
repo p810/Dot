@@ -4,14 +4,11 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Payton",
+            "name": "Lily",
             "email": "hellopayton@gmail.com"
         }
     ],
     "autoload": {
-        "psr-4": {
-            "p810\\Dot\\": "src/"
-        }
-    },
-    "require": {}
+        "files": ["src/Dot.php"]
+    }
 }
