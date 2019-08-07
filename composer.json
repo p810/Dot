@@ -1,14 +1,24 @@
 {
     "name": "p810/dot",
-    "description": "A utility for traversing arrays using dot notation.",
+    "description": "A utility for traversing arrays using dot notation",
     "license": "MIT",
     "authors": [
         {
-            "name": "Lily",
+            "name": "Payton Bice",
             "email": "hellopayton@gmail.com"
         }
     ],
     "autoload": {
-        "files": ["src/Dot.php"]
+        "files": ["src/Dot.php"],
+        "psr-4": {
+            "p810\\Dot\\": "src/",
+            "p810\\Dot\\Test\\": "test/"
+        }
+    },
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5"
     }
 }
