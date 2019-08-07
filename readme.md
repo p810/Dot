@@ -3,7 +3,7 @@
 
 ## Installation
 ```
-$ composer require p810/Dot
+$ composer require p810/dot
 ```
 
 ## Example usage
@@ -20,8 +20,8 @@ p810\Dot\find('foo.bar', [
 
 ## API
 #### `p810\Dot\find(string $needle, array|\ArrayAccess $haystack): mixed`
-> Returns a value from an array using dot notation
-
+Returns a value from an array using dot notation
+<hr>
 <details>
 <summary>Arguments</summary>
 
@@ -30,7 +30,7 @@ p810\Dot\find('foo.bar', [
 | `$needle` | `string` | n/a | A dot separated list of keys |
 | `$haystack` | `array|\ArrayAccess` | n/a | An array or object implementing `\ArrayAccess` |
 </details>
-
+<hr>
 <details>
 <summary>Exceptions</summary>
 
@@ -39,7 +39,7 @@ p810\Dot\find('foo.bar', [
 | `\TypeError` | Thrown when the given `$haystack` is not an array or object implementing `\ArrayAccess` |
 | `\OutOfBoundsException` | Thrown when an invalid key is encountered |
 </details>
-
+<hr>
 > :bulb: `p810\Dot\search()` is an alias for this function, which is itself a wrapper for `p810\Dot\Searcher::getValue()`
 
 ## License

@@ -46,17 +46,20 @@ class Searcher
             self::throwTypeError($data);
         }
 
+        $value = $data;
         $keys = self::getKeysFromString($keys);
 
-        return array_reduce($keys, function ($result, $key) {
-            if (! is_array($result) || ! array_key_exists($key, $result)) {
+        foreach ($keys as $key) {
+            if (! self::isValidSubject($value)) {
+                self::throwTypeError($data);
+            } elseif (! self::subjectHasOffset($key, $value)) {
                 throw new OutOfBoundsException("Invalid key: $key");
             }
             
-            $result = $result[$key];
+            $value = $value[$key];
+        }
 
-            return $result;
-        }, $data);
+        return $value;
     }
 
     /**
@@ -84,5 +87,23 @@ class Searcher
         $message = "p810\Dot\Searcher::getValue() expects an array or object implementing ArrayAccess; $type given";
 
         throw new TypeError($message);
+    }
+
+    /**
+     * Returns a boolean indicating whether the given data has a value at the given offset
+     * 
+     * @param string|int $offset
+     * @param array|\ArrayAccess $data
+     * @return bool
+     */
+    protected static function subjectHasOffset($offset, $data): bool
+    {
+        if (is_array($data)) {
+            return array_key_exists($offset, $data);
+        } elseif (is_object($data) && $data instanceof ArrayAccess) {
+            return $data->offsetExists($offset);
+        }
+
+        return false;
     }
 }
