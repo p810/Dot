@@ -9,11 +9,7 @@
         }
     ],
     "autoload": {
-        "files": ["src/Dot.php"],
-        "psr-4": {
-            "p810\\Dot\\": "src/",
-            "p810\\Dot\\Test\\": "test/"
-        }
+        "files": ["src/functions.php"]
     },
     "require": {
         "php": "^7.1"
