@@ -19,28 +19,22 @@ p810\Dot\find('foo.bar', [
 ```
 
 ## API
-#### `p810\Dot\find(string $needle, array|\ArrayAccess $haystack): mixed`
-Returns a value from an array using dot notation
-<hr>
-<details>
-<summary>Arguments</summary>
+#### `p810\Dot\find(string $needle, array $haystack): mixed`
+Searches an array for a value based on a dot notated string of keys
 
-| Argument | Type | Default | Description |
-|----------|------|---------|-------------|
-| `$needle` | `string` | n/a | A dot separated list of keys |
-| `$haystack` | `array|\ArrayAccess` | n/a | An array or object implementing `\ArrayAccess` |
-</details>
-<hr>
-<details>
-<summary>Exceptions</summary>
+| Argument    | Type     | Default | Description                  |
+|-------------|----------|---------|------------------------------|
+| `$needle`   | `string` | n/a     | A dot separated list of keys |
+| `$haystack` | `array`  | n/a     | The array to traverse        |
 
-| Exception | Reason |
-|-----------|--------|
-| `\TypeError` | Thrown when the given `$haystack` is not an array or object implementing `\ArrayAccess` |
-| `\OutOfBoundsException` | Thrown when an invalid key is encountered |
-</details>
-<hr>
-> :bulb: `p810\Dot\search()` is an alias for this function, which is itself a wrapper for `p810\Dot\Searcher::getValue()`
+> :bulb: `p810\Dot\search()` is an alias for this function
+
+#### `p810\Dot\getKeysFromString(string $keys): array<int,string|int>`
+Returns a list of keys from a dot notated string
+
+| Argument | Type     | Default | Description                  |
+|----------|----------|---------|------------------------------|
+| `$keys`  | `string` | n/a     | A dot separated list of keys |
 
 ## License
 This package is released under the [MIT License](https://github.com/p810/Dot/blob/master/LICENSE).
